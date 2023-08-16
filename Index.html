@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Baljeet's Resume</title>
+</head>
+<body>
+    <header>
+        <h1>Baljeet's Resume</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#summary">Quick Summary</a></li>
+            <li><a href="#experience">Experience Details</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education and Certifications</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p><!-- Your about me content here --></p>
+    </section>
+    <section id="summary">
+        <h2>Quick Summary</h2>
+        <p><!-- Your quick summary content here --></p>
+    </section>
+    <section id="experience">
+        <h2>Experience Details</h2>
+        <p><!-- Your experience details content here --></p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <p><!-- Your skills content here --></p>
+    </section>
+    <section id="education">
+        <h2>Education and Certifications</h2>
+        <p><!-- Your education and certifications content here --></p>
+    </section>
+	<section id="contact">
+		<h2>Contact Me</h2>
+		<div class="contact-content">
+			<div class="contact-links">
+				<h3>Connect with Me</h3>
+				<ul>
+					<li>Email: <a href="mailto:baljeet.bhatti@outlook.com">baljeet.bhatti@outlook.com</a></li>
+					<li>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+					<li>Twitter: <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer">@your-twitter-handle</a></li>
+					<li>Medium: <a href="https://medium.com/@your-medium-username" target="_blank" rel="noopener noreferrer">Medium Profile</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+    <footer>
+        <p>&copy; 2023 Baljeet's Resume</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll("nav a");
+            const sections = document.querySelectorAll("section");
+
+            window.addEventListener("scroll", function() {
+                let current = "";
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
